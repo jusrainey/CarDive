@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ year }} {{ make }} {{ model }} Info</title>
+</head>
+<body>
+    <h1>{{ year }} {{ make }} {{ model }}</h1>
+    <h2>Nearby Postings</h2>
+    <ul>
+    {% for post in postings %}
+        <li>{{ post.title }} - ${{ post.price }} - {{ post.location }}</li>
+    {% empty %}
+        <li>No postings found.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
