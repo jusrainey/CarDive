@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import CarInsightCache
+
+
+@admin.register(CarInsightCache)
+class CarInsightCacheAdmin(admin.ModelAdmin):
+    list_display = ("year", "make", "model", "updated_at")
